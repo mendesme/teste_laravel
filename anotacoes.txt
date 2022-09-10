@@ -1,0 +1,30 @@
+/* ##### INSTALAÇÃO DO LARAVEL #####
+
+composer create-project laravel/laravel nome-do-projeto
+
+composer create-project laravel/laravel teste ^9                    // para criar em uma versão específica
+
+// dica: talvez seja necessário usar # composer install -> apagar o ';' do 'extension=fileinfo' dentro do 'php.ini'
+
+php artisan key:generate        // talvez seja necessário: php artisan config:cache
+
+
+*/
+
+/* ##### ARTISAN ##### 
+
+php artisan                                                   // verificar opções
+
+php artisan serve                                             // subir servidor
+php artisan serve --host=127.0.0.1 --port 8000                // subir servidor com especificação
+
+php artisan make:controller SeriesController                  // cria o controller
+php artisan make:controller PhotoController --resource        // cria o controller + métodos com verbos no padrão
+
+php artisan make:controller Api\SeriesController
+
+php artisan make:request SeriesFormRequest                    // 'app/Http/Request'
+
+php artisan route:list                                        // listar todas as rotas
+
+*/

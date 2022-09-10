@@ -1,0 +1,88 @@
+@url = http://localhost:8000
+@token= "4|uddwnCuMPwhLFpn7hMv70eqRC5DX7yRzHIB01PVE"
+
+### --- index ------------------------------------------------------
+GET {{ url }}/api/series
+Accept: application/json 
+Authorization: Bearer 4|uddwnCuMPwhLFpn7hMv70eqRC5DX7yRzHIB01PVE
+
+### ----------------------------------------------------------------
+
+
+### --- index com query string  ------------------------------------
+GET {{ url }}/api/series?nome=What%20If
+
+### ----------------------------------------------------------------
+
+
+### --- show -------------------------------------------------------
+GET {{ url }}/api/series/39
+
+### ----------------------------------------------------------------
+
+
+### --- store - só nome --------------------------------------------
+POST {{ url }}/api/series
+Accept: application/json        
+Content-Type: application/json
+
+{
+    "nome": "foobazer"
+}
+
+### ----------------------------------------------------------------
+
+
+### --- store - completo -------------------------------------------
+POST {{ url }}/api/series
+Content-Type: application/json
+
+{
+    "nome": "Law & Order",
+    "seasonsQty": 1,
+    "episodesPerSeason": 8
+}
+
+### ----------------------------------------------------------------
+
+
+### --- update ------------------------------------------------------
+PUT {{ url }}/api/series/44
+Content-Type: application/json
+
+{
+    "nome": "Friends"
+}
+
+### ----------------------------------------------------------------
+
+
+### --- destroy----------------------------------------------------- 
+DELETE {{ url }}/api/series/58
+Accept: application/json
+Authorization: Bearer 4|uddwnCuMPwhLFpn7hMv70eqRC5DX7yRzHIB01PVE
+
+
+### ----------------------------------------------------------------
+
+### --- patch - episodes ----------------------------------------------------- 
+PATCH {{ url }}/api/episodes/1590/watch
+Content-Type: application/json
+
+{
+    "watched": "true"
+}
+
+### ----------------------------------------------------------------
+
+
+### --- login * store ----------------------------------------------------- 
+POST {{ url }}/api/login
+Content-Type: application/json
+
+{
+    "email": "andressa@mail",
+    "password": "123456"
+}
+
+### ----------------------------------------------------------------
